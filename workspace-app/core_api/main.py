@@ -1,4 +1,3 @@
-
 import os
 import sys
 from contextlib import asynccontextmanager
@@ -22,6 +21,7 @@ from agent_service.main import router as agent_router
 from core_api.api.auth import router as auth_router
 from core_api.api.market import router as market_router
 from core_api.api.prices import router as prices_router
+from core_api.api.bids import router as bids_router  # Added bids router import
 from core_api.db.session import get_db
 from ml_service.api import initialize_model_state, router as ml_router
 
@@ -115,3 +115,4 @@ app.include_router(market_router)
 app.include_router(auth_router)
 app.include_router(ml_router)
 app.include_router(agent_router)
+app.include_router(bids_router) # Registered bids router
